@@ -1,6 +1,7 @@
-require "nvchad.options"
+local opt = vim.opt
 
--- add yours here!
+-- Basic options
+opt.cursorline = true
+opt.number = true
+opt.relativenumber = true -- Great for jumping lines with 'j' and 'k'
 
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!

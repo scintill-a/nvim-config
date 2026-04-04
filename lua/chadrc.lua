@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "onedark",
+	theme = "kanagawa-dragon",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
@@ -20,5 +20,8 @@ M.base46 = {
 --          lazyload = false
 --      }
 -- }
-
 return M
+
+
+
+
