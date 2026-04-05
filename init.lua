@@ -1,6 +1,14 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
+-- timeout for faster input response
+vim.opt.timeoutlen = 300
+vim.opt.ttimeoutlen = 10
+
+vim.opt.background = "dark"
+
+vim.g.term_dsr_disabled = true
+
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
@@ -35,3 +43,26 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+-- Disable unused built-in plugins (huge win)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_gzip = 1
+vim.g.loaded_zip = 1
+vim.g.loaded_tar = 1
+vim.g.loaded_zipPlugin = 1
+vim.g.loaded_tarPlugin = 1
+vim.g.loaded_getscript = 1
+vim.g.loaded_getscriptPlugin = 1
+vim.g.loaded_vimball = 1
+vim.g.loaded_vimballPlugin = 1
+vim.g.loaded_2html_plugin = 1
+vim.g.loaded_matchit = 1
+vim.g.loaded_logiPat = 1
+vim.g.loaded_rrhelper = 1
+vim.g.loaded_spec = 1
+
+vim.opt.updatetime = 250      -- faster CursorHold events (default 4000ms)
+vim.opt.redrawtime = 1500     -- stop syntax highlighting if too slow
+vim.opt.lazyredraw = true     -- don't redraw screen during macros
+vim.opt.synmaxcol = 240       -- don't highlight past column 240
