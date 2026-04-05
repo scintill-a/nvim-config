@@ -7,6 +7,11 @@ vim.opt.ttimeoutlen = 10
 
 vim.opt.background = "dark"
 
+vim.opt.tabstop = 2      -- Number of spaces that a <Tab> in the file counts for
+vim.opt.softtabstop = 2  -- Number of spaces that a <Tab> counts for while performing editing operations
+vim.opt.shiftwidth = 2   -- Number of spaces to use for each step of (auto)indent
+vim.opt.expandtab = true -- Use spaces instead of tabs
+
 vim.g.term_dsr_disabled = true
 
 -- bootstrap lazy and all plugins
