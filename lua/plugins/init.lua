@@ -11,7 +11,6 @@ return {
     end,
   },
 
-
   {
     "stevearc/conform.nvim",
     event = 'BufWritePre', -- format on save
@@ -23,6 +22,20 @@ return {
     config = function()
       require "configs.lspconfig"
     end,
+  },
+
+  {
+    "sphamba/smear-cursor.nvim",
+    lazy = false,
+    opts = {
+      smear_between_buffers = true,
+      smear_between_neighbor_lines = true,
+      stiffness = 0.5,
+      trailing_stiffness = 0.25,
+      trailing_exponent = 2,
+      damping = 0.8,
+      distance_stop_animating = 0.1,
+    },
   },
  
   {
@@ -44,4 +57,9 @@ return {
     },
   },
 
+{
+  "sindrets/diffview.nvim",
+  lazy = false,
+  dependencies = { "nvim-lua/plenary.nvim" },
+},
 }

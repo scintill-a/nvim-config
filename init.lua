@@ -71,3 +71,13 @@ vim.opt.updatetime = 250      -- faster CursorHold events (default 4000ms)
 vim.opt.redrawtime = 1500     -- stop syntax highlighting if too slow
 vim.opt.lazyredraw = true     -- don't redraw screen during macros
 vim.opt.synmaxcol = 240       -- don't highlight past column 240
+
+-- Refresh nvim-tree git status when files change
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "BufWritePost" }, {
+  pattern = "*",
+  callback = function()
+    if package.loaded["nvim-tree"] then
+      require("nvim-tree.api").tree.reload()
+    end
+  end,
+})
